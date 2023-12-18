@@ -1,0 +1,18 @@
+<p-table [value]="links" [tableStyle]="{ 'min-width': '50rem' }">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>url</th>
+      <th>favorite</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-link>
+    <tr>
+      <td>
+        <a [href]="link.url" target="_blank">{{ link.url }}</a>
+      </td>
+      <td>
+        <p-inputSwitch [(ngModel)]="link.favorite" (ngModelChange)="setLinkAsFavorite(link.id, $event)"></p-inputSwitch>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
