@@ -8,7 +8,7 @@ import {InputTextModule} from "primeng/inputtext";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, MenubarModule, InputTextModule, NgOptimizedImage],
+  imports: [CommonModule, RouterOutlet, MenubarModule, InputTextModule, NgOptimizedImage,],
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
