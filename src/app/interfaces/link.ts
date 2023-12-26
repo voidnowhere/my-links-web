@@ -1,5 +1,5 @@
 export interface Link {
-  id: bigint,
+  id?: bigint,
   url: string,
   favorite: boolean,
 }

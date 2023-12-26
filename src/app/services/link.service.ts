@@ -20,4 +20,12 @@ export class LinkService {
   setLinkFavorite(id: bigint, favorite: boolean): Observable<string> {
     return this.http.put<string>(`${this.baseUrl}/${id}/set-favorite`, favorite);
   }
+
+  addLink(newLink: Link): Observable<Link> {
+    return this.http.post<Link>(this.baseUrl, newLink);
+  }
+
+  deleteLink(id: bigint): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}/${id}`);
+  }
 }
