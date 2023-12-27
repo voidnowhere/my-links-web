@@ -35,7 +35,7 @@ import {ConfirmDialogModule} from "primeng/confirmdialog";
     ConfirmDialogModule,
   ],
   templateUrl: './links-list.component.html',
-  providers: [MessageService,ConfirmationService],
+  providers: [ConfirmationService],
 })
 export class LinksListComponent implements OnInit {
   links: Link[];

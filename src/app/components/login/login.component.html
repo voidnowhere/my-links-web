@@ -1,0 +1,33 @@
+<div class="flex justify-content-center mt-5">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="flex flex-column gap-5 align-items-center">
+    <span class="pi pi-users text-8xl"></span>
+    <div>
+      <span class="p-float-label">
+        <input pInputText type="email" id="email" formControlName="email"/>
+        <label for="email">Email</label>
+      </span>
+      <div *ngIf="email.invalid && (email.dirty || email.touched)"
+           class="text-red-500 mt-1">
+        <div *ngIf="email.errors?.['required']">
+          Email is required.
+        </div>
+        <div *ngIf="email.errors?.['email']">
+          Email not valid.
+        </div>
+      </div>
+    </div>
+    <div>
+      <span class="p-float-label">
+        <input pInputText type="password" id="password" formControlName="password"/>
+        <label for="password">Password</label>
+      </span>
+      <div *ngIf="password.invalid && (password.dirty || password.touched)"
+           class="text-red-500 mt-1">
+        <div *ngIf="password.errors?.['required']">
+          Password is required.
+        </div>
+      </div>
+    </div>
+    <p-button type="submit" label="Login" [text]="true" [raised]="true"></p-button>
+  </form>
+</div>
