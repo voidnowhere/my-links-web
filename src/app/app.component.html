@@ -1,2 +1,12 @@
-<p-menubar [model]="items"></p-menubar>
+<p-menubar [model]="items">
+  <ng-template pTemplate="end">
+    @if (!loggedIn) {
+      <p-button routerLink="login" label="login" [link]="true"></p-button>
+      <p-button routerLink="register" label="register" [link]="true"></p-button>
+    } @else {
+      <p-button label="logout" (click)="logout()" [link]="true"></p-button>
+    }
+  </ng-template>
+</p-menubar>
 <router-outlet></router-outlet>
+<p-toast></p-toast>
