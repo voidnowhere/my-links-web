@@ -7,7 +7,7 @@ docker build -t my-links-web .
 ```
 - remove container
 ``` bash
-docker rm my-links-web
+docker rm -f my-links-web
 ```
 - run container
 ``` bash
