@@ -1,4 +1,4 @@
-FROM node:20.9 as build
+FROM node:20.9-slim as build
 
 WORKDIR /app
 
@@ -10,7 +10,7 @@ RUN npm install
 
 RUN ng build
 
-FROM nginx:stable
+FROM nginx:stable-alpine
 
 COPY --from=build /app/dist/my-links-web/browser /usr/share/nginx/html
 
